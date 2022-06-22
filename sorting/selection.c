@@ -1,22 +1,20 @@
 #include <stdio.h>
-#include <stdbool.h>
 
-int flag = 0, i, j;
+int i, j;
 
-int selectionSort(int array[], int size)
+void selectionSort(int array[], int size)
 {
-    int currentMinimumIndex = 0, currentItemIndex = 0, temp;
+    int currentMinimumIndex, temp;
 
     for(i = 0; i < size; i++) {
         currentMinimumIndex = i;
         for(j =i + 1; j < size; j++) { 
-            currentItemIndex = j;
             if(array[currentMinimumIndex] > array[j] ) {
-                currentMinimumIndex = currentItemIndex; 
+                currentMinimumIndex = j; 
             }
         }
         temp = array[i];
-        array[i] = array[currentMinimumIndex]; // ✔
+        array[i] = array[currentMinimumIndex];
         array[currentMinimumIndex] = temp;
     }
 
