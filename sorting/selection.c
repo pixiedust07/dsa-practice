@@ -4,18 +4,18 @@ int i, j;
 
 void selectionSort(int array[], int size)
 {
-    int currentMinimumIndex, temp;
+    int assumedMinimum, temp;
 
     for(i = 0; i < size; i++) {
-        currentMinimumIndex = i;
+        assumedMinimum = i;
         for(j =i + 1; j < size; j++) { 
-            if(array[currentMinimumIndex] > array[j] ) {
-                currentMinimumIndex = j; 
+            if(array[assumedMinimum] > array[j] ) {
+                assumedMinimum = j; 
             }
         }
         temp = array[i];
-        array[i] = array[currentMinimumIndex];
-        array[currentMinimumIndex] = temp;
+        array[i] = array[assumedMinimum];
+        array[assumedMinimum] = temp;
     }
 
     printf("Sorted Array : ");
